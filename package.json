@@ -2,17 +2,42 @@
   "name": "ruletaleta",
   "version": "1.0.0",
   "main": "src/main.js",
-  "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "productName": "Sci-fi Roulette",
+  "description": "A Roulette app with Sci-fi theme",
+  "author": "N1h1lius",
   "license": "ISC",
   "type": "commonjs",
-  "description": "",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
   "devDependencies": {
     "electron": "^33.2.1",
+    "electron-builder": "^24.13.3",
     "photonkit": "^0.1.2"
+  },
+  "build": {
+    "appId": "com.n1h1lius.scifi-roulette",
+    "copyright": "Copyright © 2025 N1h1lius",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "bin/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/app-icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
