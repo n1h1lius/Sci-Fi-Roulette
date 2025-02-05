@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta Leta</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/animations.css">
+    <link rel="stylesheet" href="src/css/modals.css">
+
+</head>
+<body>
+
+    <!-- MAIN MENU -->
+    <div id="main-menu">
+        <button id="play-alone">Jugar Solo</button>
+        <button id="rules-button-1">Reglas</button>
+    </div>
+
+    <!-- GAME CONTAINER FOR GAME SCENES -->
+    <div id="game-container" style="display: none;"></div>
+
+    <!-- SOUND CONTROL PANEL -->
+    <button id="toggle-sound" class="sound-control">
+        <img src="assets/icons/speaker.png" alt="Sound" />
+    </button>
+
+    <button id="toggle-music" class="sound-control">
+        <img src="assets/icons/music.png" alt="Music" />
+    </button>
+
+    <!-- VOLUME BAR -->
+    <div id="volume-control" class="sound-control">
+        <input type="range" id="volume-slider" min="0" max="100" value="50">
+    </div>
+
+    <!-- RULES MODAL -->
+    <div id="rules-modal-1" class="rules-modal">
+    <div class="modal-content">
+        <h2 id="rules-header" class="rules-headers">Reglas del juego</h2>
+        <div id="rules-scrollable-1">
+            <div id="bet-rules">
+                <h3 id="bet-rules-header" class="rules-headers">APUESTAS</h3>
+                <ul id="bet-rules-ul" class="rules-uls">
+                    <li><strong class="bet-rules-topic">Pares (Even):</strong> <span class="rules-text">Apuesta a que el número ganador será par. Probabilidad de ganar: 50%. Recompensa: 2x tu apuesta.</span></li>
+                    <li><strong class="bet-rules-topic">Impares (Odd):</strong> <span class="rules-text">Apuesta a que el número ganador será impar. Probabilidad de ganar: 50%. Recompensa: 2x tu apuesta.</span></li>
+                    <li><strong class="bet-rules-topic">Sith (Rojo):</strong> <span class="rules-text">Apuesta a que el número ganador estará entre los números de los Sith. Probabilidad basada en los números asignados. Recompensa ajustada según la probabilidad.</span></li>
+                    <li><strong class="bet-rules-topic">Jedi (Negro):</strong> <span class="rules-text">Apuesta a que el número ganador estará entre los números de los Jedi. Probabilidad basada en los números asignados. Recompensa ajustada según la probabilidad.</span></li>
+                    <li><strong class="bet-rules-topic">Número Único (Single Number):</strong> <span class="rules-text">Apuesta a un número específico. Probabilidad de ganar: 1 entre 36. Recompensa: 36x tu apuesta.</span></li>
+                    <li><strong class="bet-rules-topic">Cero (Zero):</strong> <span class="rules-text">La apuesta más arriesgada y con mayor recompensa. Si el número ganador es 0, ganas 50x tu apuesta.</span></li>
+                </ul>
+            </div>
+            <div id="game-rules">
+                <h3 id="game-rules-header" class="rules-headers">DINÁMICA DEL JUEGO</h3>
+                <ol class="rules-uls">
+                    <li><strong class="game-rules-topic">Realiza tus Apuestas:</strong> <span class="rules-text">Antes de girar la ruleta, puedes apostar tus fichas en una o varias de las opciones disponibles.</span></li>
+                    <li><strong class="game-rules-topic"> Gira la Ruleta:</strong> <span class="rules-text">La ruleta girará y determinará un número ganador.</span></li>
+                    <li><strong class="game-rules-topic">Cálculo de Ganancias:</strong>
+                        <ul>
+                            <li><span class="rules-text"><br>Si tu apuesta acierta, recibirás una recompensa calculada en función de la probabilidad de éxito de tu apuesta.</span></li>
+                            <li><strong class="game-rules-topic">Ejemplo:</strong> <span class="rules-text">Apuestas 10 fichas a un número único y ganas: Recibes 360 fichas.</span></li>
+                            <li><strong class="game-rules-topic">Ejemplo:</strong> <span class="rules-text">Apuestas 10 fichas al 0 y ganas: Recibes 500 fichas.</span></li>
+                            <li><span class="rules-text">Si pierdes, perderás las fichas apostadas.</span></li>
+                        </ul>
+                    </li>
+                    <li><strong class="game-rules-topic">Apuestas Abusivas: </strong><span class="rules-text">La ruleta intergalactica está diseñada a prueba de exploits. Si tratas de abusar de la ruleta o romper las apuestas, perderás todos los bonificadores y sólo recibirás de vuelta los tokens no perdidos.</span></li>
+                </ol>
+            </div>
+            <div id="special-bonuses">
+                <h3 id="special-bonuses-header" class="rules-headers">BONIFICACIONES ESPECIALES</h3>
+                <p id="special-bonuses-text">Si aciertas con el número 0, ¡recibirás una recompensa multiplicada 50x! Este es el mayor premio de la ruleta, reservado para los jugadores más atrevidos.</p>
+            </div>
+        </div>
+        <button id="rules-modal-close-button-1">Cerrar</button>
+    </div>
+    </div>
+
+    <!-- VERSION INFO -->
+    <div id="version-info">Version: 1.0</div>
+
+    <!-- SCRIPTS -->
+    <script src="src/scripts/scene-loader.js"></script>
+    <script src="src/scripts/sound.js"></script>
+    <script src="src/scripts/game/modals.js"></script>
+    <script src="src/scripts/game/game.js"></script>
+    <script src="src/renderer.js"></script>
+
+</body>
+
+</html>
