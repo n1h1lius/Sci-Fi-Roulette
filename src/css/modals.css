@@ -1,0 +1,323 @@
+/*========================================================================
+                            NOTIFICATION MODAL
+==========================================================================*/
+
+.notification-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    top: 35%;
+    left: 25%;
+    right: 0;
+    bottom: 44%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    font-family: Mandalore, Arial;
+    font-size: 15px;
+    
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 20px;
+    background-color:#333; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#modal-close-button {
+    font-size: 15px;
+    margin-top: 15px;
+    /*Star Wars Style*/
+    color: white;
+    border-color: #d62828; 
+    background-color: #d62828; 
+    text-shadow: 0 0 5px #ff0909, 0 0 10px #ff0909; 
+    box-shadow: 0 0 10px rgba(255, 9, 9, 0.5), 0 0 20px rgba(255, 9, 9, 0.3); 
+}
+
+#modal-close-button:hover {
+    color: #ff0000;
+    background-color: #d62828; 
+    border-color: #ff0000; 
+    text-shadow: 0 0 5px #ff0909, 0 0 10px #ff0909; 
+    box-shadow: 0 0 10px rgba(255, 9, 9, 0.5), 0 0 20px rgba(255, 9, 9, 0.3); 
+}
+
+/*========================================================================
+                                BET MODAL
+==========================================================================*/
+
+.bet-modal {
+    display: none; 
+    position: fixed;
+    width: 50%;
+    top: 30%;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1000; 
+    font-family: Mandalore, Arial;
+    font-size: 15px;
+}
+
+#player-bet-text {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#accept-bet-button, #cancel-bet-button {
+    margin-top: 15px;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+    /*Star Wars Style*/
+    color: white;
+    border-color: #00aeff; 
+    background-color: #00aeff; 
+    text-shadow: 0 0 5px #0095cf, 0 0 10px rgb(0, 183, 255); 
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.8), 0 0 30px rgba(0, 183, 255, 0.6);
+}
+
+#bet-buttons {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 0; 
+    gap: 25px;
+}
+
+#bet-amount-input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px; 
+    width: 50%;
+    border-radius: 5px; 
+    text-align: center;
+    font-family: Mandalore, Arial;
+    font-size: 15px;
+    background-color: transparent; 
+    /*Star Wars Style*/
+    border: 1px solid #00aeff; 
+    color: white; 
+    text-shadow: 0 0 5px #0095cf, 0 0 10px rgb(0, 183, 255); 
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.8), 0 0 30px rgba(0, 183, 255, 0.6);
+}
+
+/*HIDE DEFAULT BUTTONS ON INPUT FIELD
+------------------------------------------------------------------------------*/
+
+/* CHROME AND SAFARI */
+#bet-amount-input::-webkit-inner-spin-button,
+#bet-amount-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* FIREFOX */
+#bet-amount-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/*========================================================================
+                                RULES MODAL
+==========================================================================*/
+
+.rules-modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    height: 300px;
+    top: 5%;
+    left: 25%;
+    right: 0;
+    bottom: 44%;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    font-family: Mandalore, Arial;
+    font-size: 15px;
+    
+}
+
+#rules-scrollable, #rules-scrollable-1 {
+    overflow-y: auto; 
+    padding-right: 10px;
+    max-height: 300px;    
+    /* Hide Scroll Bar */
+    scrollbar-width: none; /* Firefox */
+}
+
+#rules-scrollable::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.rules-headers {
+    width: 100%; 
+    height: 50px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: Mandalore, Arial;
+    font-size: 18px;
+    border-radius: 5px; 
+    margin-top: 15px;
+    margin-bottom: 15px; 
+
+}
+
+#rules-header {
+    /*Star Wars Style*/
+    color: #ea00ff;
+    background-color: rgba(51, 51, 51, 0.9); 
+    border: 1px solid #ea00ff; 
+    text-shadow: 0 0 5px #ea00ff, 0 0 10px rgb(234, 0, 255);
+    box-shadow: 0 0 20px rgba(234, 0, 255, 0.8), 0 0 30px rgba(234, 0, 255, 0.6); 
+}
+
+#bet-rules-header {
+    /*Star Wars Style*/
+    color: #fffb00;
+    background-color: rgba(51, 51, 51, 0.9); 
+    border: 1px solid #fffb00; 
+    text-shadow: 0 0 5px #fffb00, 0 0 10px #fffb00;
+    box-shadow: 0 0 20px rgba(255, 251, 0, 0.8), 0 0 30px rgba(255, 251, 0, 0.6); 
+}
+
+#game-rules-header {
+    /*Star Wars Style*/
+    color: #ff0000;
+    background-color: rgba(51, 51, 51, 0.9); 
+    border: 1px solid #ff0000; 
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); 
+}
+
+#special-bonuses-header {
+    /*Star Wars Style*/
+    color: #00aeff;
+    background-color: rgba(51, 51, 51, 0.9); 
+    border: 1px solid #00aeff; 
+    text-shadow: 0 0 5px #00aeff, 0 0 10px #00aeff;
+    box-shadow: 0 0 20px rgba(0, 174, 255, 0.8), 0 0 30px rgba(0, 174, 255, 0.6); 
+}
+
+li {
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.rules-uls {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#bet-rules-ul {
+    gap:10px;
+}
+
+.rules-text {
+    /*Star Wars Style*/
+    color: white;
+    background-color: rgba(51, 51, 51, 0.9); 
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    text-align: left;
+}
+
+.bet-rules-topic {
+    /*Star Wars Style*/
+    color: #fffb00;
+    background-color: rgba(51, 51, 51, 0.9); 
+    text-shadow: 0 0 5px #fffb00, 0 0 10px #fffb00;
+    text-align: left;
+}
+
+.game-rules-topic {
+    /*Star Wars Style*/
+    color: #ff0000;
+    background-color: rgba(51, 51, 51, 0.9); 
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+    text-align: left;
+}
+
+#special-bonuses-text {
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#rules-modal-close-button, #rules-modal-close-button-1 {
+    font-size: 15px;
+    margin-top: 15px;
+    /*Star Wars Style*/
+    color: white;
+    border-color: #d62828; 
+    background-color: #d62828; 
+    text-shadow: 0 0 5px #ff0909, 0 0 10px #ff0909; 
+    box-shadow: 0 0 10px rgba(255, 9, 9, 0.5), 0 0 20px rgba(255, 9, 9, 0.3); 
+}
+
+#rules-modal-close-button:hover, #rules-modal-close-button-1:hover {
+    color: #ff0000;
+    background-color: #d62828; 
+    border-color: #ff0000; 
+    text-shadow: 0 0 5px #ff0909, 0 0 10px #ff0909; 
+    box-shadow: 0 0 10px rgba(255, 9, 9, 0.5), 0 0 20px rgba(255, 9, 9, 0.3); 
+}
+
+
+/*========================================================================
+                            DEBUG MODAL (DEPRECATED)
+==========================================================================*/
+
+.debug-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.debug-modal .modal-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.debug-modal .modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.debug-modal .modal-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#debug-close-button {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#debug-close-button:hover {
+    background-color: #ff9900;
+}
+

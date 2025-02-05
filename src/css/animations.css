@@ -1,0 +1,49 @@
+/*========================================================================
+                                ANIMATIONS
+==========================================================================*/
+
+@keyframes modalExpand-red {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+        /* Star wars style */
+        color: #ffffff;
+        text-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000;
+        border-color: #ff0000; 
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+    }
+}
+
+@keyframes modalExpand {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+        /* Star wars style */
+        color: #ffffff;
+        text-shadow: 0 0 5px #0191d4, 0 0 15px #00aeff;
+        border-color: #00aeff; 
+        box-shadow: 0 0 20px rgba(0, 183, 255, 0.8), 0 0 30px rgba(0, 183, 255, 0.6);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Un Jugador</title>
+    <link rel="stylesheet" href="src/css/game.css">
+    <link rel="stylesheet" href="src/css/animations.css">
+    <link rel="stylesheet" href="src/css/modals.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div id="game-layout">
+
+        <!-- LEFT COLUMN - PLAYER DATA AND CONTROLS -->
+        <div id="controls">
+            <div id="controls-header"><h2>Panel del Jugador</h2></div>
+            <div id="controls-p">
+                <p>Jugador: Jugador 1</p>
+                <p>Tokens: <span id="tokens-ui">100</span></p>
+                <p>Ronda: <span id="rounds-ui">1</span></p>
+            </div>
+            <div id="controls-buttons-header"><h2>Panel de Control</h2></div>
+            <div id="controls-buttons">
+                <button id="exit-button">Salir</button>
+                <button id="spin-button">Girar</button>
+            </div>
+            <button id="rules-button">Reglas</button>
+        </div>
+        
+        <!-- CENTRAL COLUMNS - BET LOGS -->
+        <div id="roulette-container">
+            <div id='bet-logs-header'><h2>Registro de Apuestas</h2></div>
+            <div id="bet-logs"><!-- Los textos serán agregados dinámicamente aquí --></div>
+            <div id="total-bet"><br><b>Apuesta Total: <span id=total-bet-int>0</span></b></div>
+        </div>
+
+        <!-- RIGHT COLUMN - BET BOARD -->
+        <div id="game-board" class="board-buttons">
+            <div id="game-board-header"><h2>Tablero de Apuestas</h2></div>
+            <div class="numeros-tablero">
+                <button class="numero cero" id="zero">0</button>
+                <button class="numero rojo">1</button>
+                <button class="numero negro">2</button>
+                <button class="numero rojo">3</button>
+                <button class="numero negro">4</button>
+                <button class="numero rojo">5</button>
+                <button class="numero negro">6</button>
+                <button class="numero rojo">7</button>
+                <button class="numero negro">8</button>
+                <button class="numero rojo">9</button>
+                <button class="numero negro">10</button>
+                <button class="numero negro">11</button>
+                <button class="numero rojo">12</button>
+                <button class="numero negro">13</button>
+                <button class="numero rojo">14</button>
+                <button class="numero negro">15</button>
+                <button class="numero rojo">16</button>
+                <button class="numero negro">17</button>
+                <button class="numero rojo">18</button>
+                <button class="numero rojo">19</button>
+                <button class="numero negro">20</button>
+                <button class="numero rojo">21</button>
+                <button class="numero negro">22</button>
+                <button class="numero rojo">23</button>
+                <button class="numero negro">24</button>
+                <button class="numero rojo">25</button>
+                <button class="numero negro">26</button>
+                <button class="numero rojo">27</button>
+                <button class="numero negro">28</button>
+                <button class="numero negro">29</button>
+                <button class="numero rojo">30</button>
+                <button class="numero negro">31</button>
+                <button class="numero rojo">32</button>
+                <button class="numero negro">33</button>
+                <button class="numero rojo">34</button>
+                <button class="numero negro">35</button>
+                <button class="numero rojo">36</button>
+            </div>
+            <div class="apuestas">
+                <button class="apuesta par">Pares</button>
+                <button class="apuesta impar">Impares</button>
+                <button class="apuesta rojo">Sith</button>
+                <button class="apuesta negro">Jedi</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NOTIFICATION MODAL -->
+    <div id="notification-modal" class="notification-modal">
+        <div class="modal-content">
+            <p id="notification-message">No tienes suficientes tokens para esa apuesta.</p>
+            <button id="modal-close-button">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- BET MODAL -->
+    <div id="bet-modal" class="bet-modal">
+        <div class="modal-content">
+            <h2>Ingrese la cantidad de tokens a apostar</h2>
+            <p id="player-bet-text">Apuesta al 2 Rojo</p>
+            <input type="number" id="bet-amount-input" min="1" placeholder="Cantidad de tokens" />
+            <div id="bet-buttons">
+                <button id="accept-bet-button">Aceptar</button>
+                <button id="cancel-bet-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RULES MODAL -->
+    <div id="rules-modal" class="rules-modal">
+        <div class="modal-content">
+            <h2 id="rules-header" class="rules-headers">Reglas del juego</h2>
+            <div id="rules-scrollable">
+                <div id="bet-rules">
+                    <h3 id="bet-rules-header" class="rules-headers">APUESTAS</h3>
+                    <ul id="bet-rules-ul" class="rules-uls">
+                        <li><strong class="bet-rules-topic">Pares (Even):</strong> <span class="rules-text">Apuesta a que el número ganador será par. Probabilidad de ganar: 50%. Recompensa: 2x tu apuesta.</span></li>
+                        <li><strong class="bet-rules-topic">Impares (Odd):</strong> <span class="rules-text">Apuesta a que el número ganador será impar. Probabilidad de ganar: 50%. Recompensa: 2x tu apuesta.</span></li>
+                        <li><strong class="bet-rules-topic">Sith (Rojo):</strong> <span class="rules-text">Apuesta a que el número ganador estará entre los números de los Sith. Probabilidad basada en los números asignados. Recompensa ajustada según la probabilidad.</span></li>
+                        <li><strong class="bet-rules-topic">Jedi (Negro):</strong> <span class="rules-text">Apuesta a que el número ganador estará entre los números de los Jedi. Probabilidad basada en los números asignados. Recompensa ajustada según la probabilidad.</span></li>
+                        <li><strong class="bet-rules-topic">Número Único (Single Number):</strong> <span class="rules-text">Apuesta a un número específico. Probabilidad de ganar: 1 entre 36. Recompensa: 36x tu apuesta.</span></li>
+                        <li><strong class="bet-rules-topic">Cero (Zero):</strong> <span class="rules-text">La apuesta más arriesgada y con mayor recompensa. Si el número ganador es 0, ganas 50x tu apuesta.</span></li>
+                    </ul>
+                </div>
+                <div id="game-rules">
+                    <h3 id="game-rules-header" class="rules-headers">DINÁMICA DEL JUEGO</h3>
+                    <ol class="rules-uls">
+                        <li><strong class="game-rules-topic">Realiza tus Apuestas:</strong> <span class="rules-text">Antes de girar la ruleta, puedes apostar tus fichas en una o varias de las opciones disponibles.</span></li>
+                        <li><strong class="game-rules-topic"> Gira la Ruleta:</strong> <span class="rules-text">La ruleta girará y determinará un número ganador.</span></li>
+                        <li><strong class="game-rules-topic">Cálculo de Ganancias:</strong>
+                            <ul>
+                                <li><span class="rules-text"><br>Si tu apuesta acierta, recibirás una recompensa calculada en función de la probabilidad de éxito de tu apuesta.</span></li>
+                                <li><strong class="game-rules-topic">Ejemplo:</strong> <span class="rules-text">Apuestas 10 fichas a un número único y ganas: Recibes 360 fichas.</span></li>
+                                <li><strong class="game-rules-topic">Ejemplo:</strong> <span class="rules-text">Apuestas 10 fichas al 0 y ganas: Recibes 500 fichas.</span></li>
+                                <li><span class="rules-text">Si pierdes, perderás las fichas apostadas.</span></li>
+                            </ul>
+                        </li>
+                        <li><strong class="game-rules-topic">Apuestas Abusivas: </strong><span class="rules-text">La ruleta intergalactica está diseñada a prueba de exploits. Si tratas de abusar de la ruleta o romper las apuestas, perderás todos los bonificadores y sólo recibirás de vuelta los tokens no perdidos.</span></li>
+                    </ol>
+                </div>
+                <div id="special-bonuses">
+                    <h3 id="special-bonuses-header" class="rules-headers">BONIFICACIONES ESPECIALES</h3>
+                    <p id="special-bonuses-text">Si aciertas con el número 0, ¡recibirás una recompensa multiplicada 50x! Este es el mayor premio de la ruleta, reservado para los jugadores más atrevidos.</p>
+                </div>
+            </div>
+            <button id="rules-modal-close-button">Cerrar</button>
+        </div>
+    </div>
+
+
+
+    <!-- DEBUG MODAL -->
+    <div id="debug-modal" class="debug-modal">
+        <div class="modal-header">
+            <h2>Debug Mode</h2>
+        </div>
+        <div class="modal-content">
+            <label>
+                <input type="checkbox" id="always-win-checkbox"> Always Win
+            </label>
+            <label>
+                <input type="checkbox" id="always-lose-checkbox"> Always Lose
+            </label>
+        </div>
+        <div class="modal-footer">
+            <button id="debug-close-button">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="src/scripts/game/modals.js"></script>
+    <script src="src/scripts/game/game.js"></script>
+    <script src="src/scripts/sound.js"></script>
+    <script src="src/scripts/scene-loader.js"></script>
+    <script src="scripts/renderer.js"></script>
+    
+</body>
+</html>

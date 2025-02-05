@@ -1,0 +1,189 @@
+/*========================================================================
+                                   FONTS
+==========================================================================*/
+
+@font-face {
+    font-family: 'Mandalore';
+    src: url('../../assets/fonts/Mandalore.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Mandalore';
+    src: url('../../assets/fonts/MandaloreBold.otf');
+    font-weight: bold;
+}
+
+/*========================================================================
+                                GENERAL STYLE
+==========================================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Mandalore, Arial;
+    position: relative;
+
+    background-image: url('../../assets/images/backgrounds/main-menu.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+}
+
+/*========================================================================
+                                MAIN MENU
+==========================================================================*/
+
+#main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+/*MENU BUTTONS
+------------------------------------------------------------------------------*/
+button {
+    padding: 15px 30px;
+    font-size: 25px;
+    font-family: Mandalore, Arial;
+    cursor: pointer;
+    border: 2px solid #555555;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #2a2a2a, #1e1e1e); 
+    color: #00ccff;
+    text-shadow: 0 0 5px #00ccff, 0 0 10px #00ccff; 
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5), 0 0 20px rgba(0, 204, 255, 0.3); 
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(180deg, #1e1e1e, #2a2a2a);
+    color: #ffffff; 
+    text-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff; 
+    border-color: #00ccff; 
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.8), 0 0 30px rgba(0, 204, 255, 0.6); 
+    transform: scale(1.05); 
+}
+
+
+button:disabled {
+    background: linear-gradient(180deg, #444444, #2a2a2a); 
+    color: #666666; 
+    border-color: #333333; 
+    box-shadow: none; 
+    cursor: not-allowed;
+}
+
+/*MUSIC BUTTONS
+------------------------------------------------------------------------------*/
+.sound-control {
+    position: fixed;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#toggle-sound {
+    bottom: 20px; 
+    left: 20px;  
+}
+
+#toggle-music {
+    bottom: 20px;
+    left: 90px;
+}
+
+.sound-control:hover {
+    background-color: rgba(0, 0, 0, 0.1); 
+    border-radius: 50%; 
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sound-control img {
+    width: 40px; 
+    height: 40px;
+    transition: filter 0.3s ease; 
+}
+
+.sound-control:hover img {
+    filter: brightness(1.5);
+}
+
+#volume-control {
+    position: fixed;
+    bottom: 20px;
+    left: 200px; 
+    display: flex;
+    align-items: center;
+}
+
+#volume-slider {
+    width: 100px; 
+    height: 5px; 
+    -webkit-appearance: none;
+    background: #ddd; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#volume-slider:hover {
+    background: #008CBA;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #008CBA;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#volume-slider:hover::-webkit-slider-thumb {
+    background: #005f6b; 
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #008CBA;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#volume-slider:hover::-moz-range-thumb {
+    background: #005f6b;
+}
+
+/*OTHER
+------------------------------------------------------------------------------*/
+
+#version-info{
+    position: fixed; 
+    bottom: 0; 
+    right: 0;
+    font-size: 9px; 
+    padding: 10px; /* Opcional: para agregar un poco de espacio alrededor del texto */ 
+    color: white; /* Opcional: para cambiar el color del texto */
+}
