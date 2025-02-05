@@ -184,6 +184,6 @@ button:disabled {
     bottom: 0; 
     right: 0;
     font-size: 9px; 
-    padding: 10px; /* Opcional: para agregar un poco de espacio alrededor del texto */ 
-    color: white; /* Opcional: para cambiar el color del texto */
+    padding: 10px;
+    color: white;
 }
