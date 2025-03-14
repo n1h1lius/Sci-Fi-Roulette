@@ -2,6 +2,8 @@
 
 Sci-Fi Roulette is a virtual roulette game developed using Photon and Electron. The primary goal of this project is to create a simple and user-friendly application that can be exported both as a standalone executable (.exe) and as an installer setup.
 
+![Game ScreenShot](assets/images/backgrounds/main-menu.jpg)
+
 ## About the Game
 
 The game is heavily inspired by a sci-fi aesthetic similar to Star Wars. As a virtual roulette, its overall style resembles that of a Star Wars-themed casino. The visuals, sounds, and music throughout the game are designed to reflect the Star Wars universe.
