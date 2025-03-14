@@ -2,7 +2,7 @@
 
 Sci-Fi Roulette is a virtual roulette game developed using Photon and Electron. The primary goal of this project is to create a simple and user-friendly application that can be exported both as a standalone executable (.exe) and as an installer setup.
 
-![Game ScreenShot](assets/images/backgrounds/main-menu.jpg)
+![Game ScreenShot](assets/images/backgrounds/ScreenShot.jpg)
 
 ## About the Game
 
