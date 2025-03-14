@@ -191,7 +191,7 @@ async function spinRoulette() {
   });
 
   // Generate a random number as winning Number
-  const winningNumber = Math.floor(Math.random() * 37); // Número aleatorio entre 0 y 36
+  const winningNumber = Math.floor(Math.random() * 37);
 
   // Trace Log Entry
   window.electron.logSystem(header, 'log', `Starting Roulette Sequence. Winner Number: ${winningNumber}`);
